@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wisestep registration form</title>
+
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<body>
+<div ng-app="mainApp" ng-controller="studentController">
+
+<script src="WiseStep/angular.min(1).js"></script>
+</style>
+<p align="right"><a href="aboutus.html"><i class="material-icons">home</i>Home</a>
+                                  <a href="contactus.html">Contact Us</a>
+                                 <a href="help.html">Help</a></p>
+<table>
+<tr>
+<td>
+<p align="left"><img src="C:\Users\Baru\Desktop\wisestepimg.jpg"></p>
+</td>
+<td>
+ Email: <input type="text" ng-model="email" placeholder="Email" required>  Password: <input type="text" ng-model="password" placeholder="password" required> <button ng-click="login()">Login</button>
+   </p>
+<h4><p align="right"><a href="forgotten">Forgotten your password?</a></p></h4>
+
+<h1><p align="center">Sign up</p></h1>
+<div id="home" ng-app="mainApp" ng-controller="SimpleController">
+<form name="studentForm" novalidate>
+<p align="center">
+<table border="0">
+<p class="ex">
+<tr><br>
+<input name="firstname" id="fname" type="text" ng-model="firstName" placeholder="Enter your first name" required/>
+<span style="color:red" ng-show="studentForm.firstname.$dirty && studentForm.firstname.$invalid">
+      <span ng-show="studentForm.firstname.$error.required">First Name is required.</span>
+   </span>
+</br>      
+</tr>
+<br>
+<tr><input name="lastname"  id="lname" type="text" ng-model="lastName" placeholder="Enter your last name" required/>
+ <span style="color:red" ng-show="studentForm.lastname.$dirty && studentForm.lastname.$invalid">
+      <span ng-show="studentForm.firstname.$error.required">First Name is required.</span>
+   </span>
+</tr></br>
+<tr><br><input name="email" id="email" type="email" ng-model="email" placeholder="Enter your email" required/>
+      <span style="color:red" ng-show="studentForm.email.$dirty && studentForm.email.$invalid">
+      <span ng-show="studentForm.email.$error.required">Email is required.</span>
+	  <span ng-show="studentForm.email.$error.email">Invalid email address.</span>
+   </span>
+</br></tr>
+<tr><br><input name="Password"  id="password" type="password" ng-model="password" placeholder="Enter password" required/>
+
+</tr></br>
+
+<br><tr><input type="radio" ng-model="user.gender" value="male" />male
+    <input type="radio" ng-model="user.gender" value="female" />female
+    
+    <br /></tr><br>
+
+    
+<tr><br><button 
+ng-disabled="studentForm.firstname.$dirty && studentForm.firstname.$invalid ||
+			  studentForm.lastname.$dirty && studentForm.lastname.$invalid ||
+			  studentForm.email.$dirty && studentForm.email.$invalid">
+	<a href="Directives.html">Get Started</a></button></tr>
+	<script>
+var mainApp = angular.module("mainApp", []);
+
+mainApp.controller('SimpleController', function($scope) {
+   $scope.submit = function(){
+		$scope.firstName = "Prasad";
+		$scope.lastName = "Daram";
+		$scope.email = "saiprasaddaram@gmail.com";
+   }   
+   $scope.submit();
+});
+</script>
+<p>By signing up you agree to WiseStep <a href="https://wisestep.com/termsandconditions">Terms and Conditions</a></p>
+</td></tr>
+</table>
+</table></p>
+</form>
+</div>
+</body>
+</html>
